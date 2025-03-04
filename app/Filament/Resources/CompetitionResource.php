@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\LeagueResource\Pages;
-use App\Filament\Resources\LeagueResource\RelationManagers;
-use App\Models\League;
+use App\Filament\Resources\CompetitionResource\Pages;
+use App\Filament\Resources\CompetitionResource\RelationManagers;
+use App\Models\Competition;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -27,13 +27,13 @@ use Filament\Forms\Components\Select;
 use Parfaitementweb\FilamentCountryField\Forms\Components\Country;
 
 
-class LeagueResource extends Resource
+class CompetitionLeagueResource extends Resource
 {
     protected static ?string $model = League::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Leagues';
-    protected static ?string $navigationLabel = 'Leagues';
+    protected static ?string $navigationGroup = 'Competitions';
+    protected static ?string $navigationLabel = 'Competitions';
     protected static ?int $navigationSort = 1;
 
 
@@ -82,9 +82,9 @@ class LeagueResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListLeagues::route('/'),
-            'create' => Pages\CreateLeague::route('/create'),
-            'edit' => Pages\EditLeague::route('/{record}/edit'),
+            'index' => Pages\ListCompetitions::route('/'),
+            'create' => Pages\CreateCompetition::route('/create'),
+            'edit' => Pages\EditCompetition::route('/{record}/edit'),
         ];
     }
 }

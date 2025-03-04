@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Team extends Model
 {
-    protected $fillable = ['api_id', 'name', 'display_name', 'league_id'];
+    protected $fillable = ['api_id', 'name', 'display_name', 'competition_id'];
 
     public function league()
     {
-        return $this->belongsTo(League::class);
+        return $this->belongsTo(Competition::class);
     }
 
 }
